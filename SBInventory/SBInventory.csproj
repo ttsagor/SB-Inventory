@@ -97,12 +97,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="entry_form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="entry_form.Designer.cs">
-      <DependentUpon>entry_form.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,9 +147,6 @@
     <Compile Include="usercontrol.Designer.cs">
       <DependentUpon>usercontrol.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="entry_form.resx">
-      <DependentUpon>entry_form.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
