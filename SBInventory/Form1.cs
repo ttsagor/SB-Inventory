@@ -931,7 +931,7 @@ namespace SBInventory
         void deleteFile()
         {
             System.IO.DirectoryInfo di = new DirectoryInfo("temp");
-
+            System.IO.Directory.CreateDirectory("temp");
             foreach (FileInfo file in di.GetFiles())
             {
                 try
@@ -1180,7 +1180,8 @@ namespace SBInventory
                             cell.Colspan = 5;
                             cell.HorizontalAlignment = 2;
                             cell.VerticalAlignment = 1;
-                            cell.BorderColor = BaseColor.WHITE;
+                            cell.Border =  PdfPCell.TOP_BORDER;
+                            cell.BorderColor = BaseColor.BLACK;
                             table.AddCell(cell);
 
 
@@ -1479,7 +1480,8 @@ namespace SBInventory
                         cell.Colspan = 5;
                         cell.HorizontalAlignment = 2;
                         cell.VerticalAlignment = 1;
-                        cell.BorderColor = BaseColor.WHITE;
+                        cell.Border = PdfPCell.TOP_BORDER;
+                        cell.BorderColor = BaseColor.BLACK;
                         table.AddCell(cell);
 
 
