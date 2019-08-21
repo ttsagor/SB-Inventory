@@ -1060,7 +1060,6 @@ namespace SBInventory
                         {
 
                             string sql_search = "SELECT EID,DRDate,DRTime,SBDSB,LotNo,STS FROM tblSBDispatch WHERE " + condition + " DRDate BETWEEN #" + startDate + "# AND #" + endDate + "# AND LotNo='" + loot.Trim() + "' AND isByHand=0  ORDER BY STS";
-                            //MessageBox.Show(sql_search);
                             using (OleDbDataAdapter adapter = new OleDbDataAdapter(sql_search, conn))
                             {
                                 adapter.Fill(dt);
