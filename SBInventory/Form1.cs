@@ -448,9 +448,9 @@ namespace SBInventory
             
             string date = DateTime.Today.ToString("MM-dd-yyyy");
             string time = string.Format("{0:hh:mm:ss tt}", DateTime.Now);
-            string loot = textBox2.Text;
-            string eid = textBox1.Text;
-            string SBDSB = comboBox3.Text;
+            string loot = textBox2.Text.Trim();
+            string eid = textBox1.Text.Trim();
+            string SBDSB = comboBox3.Text.Trim();
             bool dispatchFlag = false;
             int totalDispatch = 0;
             int totalReceive = 0;
