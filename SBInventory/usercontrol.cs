@@ -15,6 +15,8 @@ namespace SBInventory
         OleDbConnection conn;
         public static String username = "";
         public static String password = "";
+        public static String auto_submit_eid = "0";
+
         public usercontrol()
         {
             InitializeComponent();
@@ -76,6 +78,13 @@ namespace SBInventory
 
                 if (dt_limit.Rows.Count > 0)
                 {
+                    foreach (DataRow row in dt_limit.Rows)
+                    {
+                        auto_submit_eid = row[3].ToString();
+                    }
+
+                   // MessageBox.Show(auto_submit_eid);
+
                     Form f1 = new Form1();
                     this.Hide();
                     f1.Show();

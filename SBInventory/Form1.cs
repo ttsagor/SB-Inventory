@@ -918,8 +918,10 @@ namespace SBInventory
 
         private void textBox1_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            const char Delete = (char)8;
-            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != Delete;
+           
+                const char Delete = (char)8;
+                e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != Delete;
+            
             
         }
 
@@ -1765,15 +1767,20 @@ namespace SBInventory
 
     private void textBox1_KeyDown(object sender, KeyEventArgs e)
     {
-        if (e.KeyCode == Keys.Enter)
-        {
-            button1_Click_1(sender, e);
-        }
+            if (usercontrol.auto_submit_eid == "0")
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    button1_Click_1(sender, e);
+                }
+            }
+            else {
+            }
     }
 
     private void textBox3_KeyDown(object sender, KeyEventArgs e)
     {
-        if (e.KeyCode == Keys.Enter)
+        if (usercontrol.auto_submit_eid=="0" && e.KeyCode == Keys.Enter)
         {
             button2_Click_1(sender, e);
         }
@@ -1781,15 +1788,18 @@ namespace SBInventory
 
     private void textBox5_KeyDown(object sender, KeyEventArgs e)
     {
-         if (e.KeyCode == Keys.Enter)
-        {
-            button7_Click_1(sender, e);
-        }        
+            if (usercontrol.auto_submit_eid == "0")
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    button7_Click_1(sender, e);
+                }
+            }     
     }
 
     private void textBox4_KeyDown(object sender, KeyEventArgs e)
     {
-         if (e.KeyCode == Keys.Enter)
+         if (usercontrol.auto_submit_eid=="0" && e.KeyCode == Keys.Enter)
         {
             button3_Click_1(sender, e);
         }
@@ -1970,7 +1980,37 @@ namespace SBInventory
 
     }
 
-        
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (usercontrol.auto_submit_eid == "1" && textBox1.Text.Count() == 15)
+            {
+                button1_Click_1(sender, e);
+            }
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            if (usercontrol.auto_submit_eid == "1" && textBox3.Text.Count() == 15)
+            {
+                button2_Click_1(sender, e);
+            }
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            if (usercontrol.auto_submit_eid == "1" && textBox5.Text.Count() == 15)
+            {
+                button7_Click_1(sender, e);
+            }
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            if (usercontrol.auto_submit_eid=="1" && textBox4.Text.Count() == 15)
+            {
+                button3_Click_1(sender, e);
+            }
+        }
     }
 
     public class ComboboxItem
